@@ -36,8 +36,7 @@ class Scraper
     end
 
     profile_details = {
-      :linkedin => x
-      ,
+      :linkedin => x,
       :github => social[2],
       # social.each {|social| social.include?('github') ? social : nil},
       # social[2].include?('github') ? social[2] : nil,
