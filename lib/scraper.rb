@@ -32,7 +32,6 @@ class Scraper
       :linkedin => social.each_with_index do |x, i|
         if x[i].include?("linkedin")
           x[i]
-        end
       end,
       :github => social[2],
       # social.each {|social| social.include?('github') ? social : nil},
