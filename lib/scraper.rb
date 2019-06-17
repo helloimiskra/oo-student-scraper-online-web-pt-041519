@@ -38,7 +38,7 @@ class Scraper
         case x[i]
         when include?("linkedin")
           profile_details[:linkedin] = x[i]
-        when include?("linkedin") 
+        when include?("linkedin")
         when include?("linkedin")
         when include?("linkedin")
     profile_details = {
