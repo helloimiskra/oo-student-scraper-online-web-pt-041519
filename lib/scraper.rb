@@ -32,12 +32,15 @@ class Scraper
 
     social.map.with_index do |x, i|
       case x[i]
-        when include? "linkedin"
+      when include? "linkedin"
           profile_details[:linkedin] = x[i]
+        end
         when include? "github"
           profile_details[:github] = x[i]
+        end
         when include? "twitter"
           profile_details[:twitter] = x[i]
+        end
         else
           profile_details[:blog] = x[i]
         end
