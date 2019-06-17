@@ -34,7 +34,7 @@ class Scraper
         x[i]
       end
     end
-    
+
     profile_details = {
       :linkedin => x
       ,
