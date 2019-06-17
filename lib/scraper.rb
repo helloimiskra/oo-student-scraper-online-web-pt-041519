@@ -29,7 +29,7 @@ class Scraper
     social = url.css('div.social-icon-container a').map { |link| nil ? nil : link['href'] || nil }
     #  binding.pry
     profile_details = {}
-    
+
     social.map.with_index do |x, i|
       case x[i]
       when include?("linkedin")
