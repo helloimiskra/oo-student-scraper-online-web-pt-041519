@@ -58,7 +58,7 @@ class Scraper
     #   :profile_quote => url.css('div.profile-quote').text.strip,
     #   :bio => url.css('div.description-holder p').text.strip
     # }
-    # binding.pry
+
     profile_details
 
   end
