@@ -37,7 +37,7 @@ class Scraper
           puts "#{x}"
         end
       end,
-  
+
       :twitter => social.map do |x|
         if x.include?("twitter")
           puts "#{x}"
