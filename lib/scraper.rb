@@ -34,7 +34,13 @@ class Scraper
         x[i]
       end
     end
-
+      social.map.with_index do |x, i|
+        case x[i]
+        when include?("linkedin")
+          profile_details[:linkedin] = x[i]
+        when include?("linkedin") 
+        when include?("linkedin")
+        when include?("linkedin")
     profile_details = {
       :linkedin => x,
       :github => social[2],
