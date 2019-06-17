@@ -36,7 +36,7 @@ class Scraper
           profile_details[:linkedin] = x[i]
         when include? "github"
           profile_details[:github] = x[i]
-        when include? "twitter" 
+        when include? "twitter"
           profile_details[:twitter] = x[i]
         else
           profile_details[:blog] = x[i]
