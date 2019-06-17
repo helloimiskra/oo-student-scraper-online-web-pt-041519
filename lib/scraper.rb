@@ -24,23 +24,23 @@ class Scraper
     profile_details = {
       :linkedin => social.map do |x|
         if x.include?("linkedin")
-          puts "#{x}"
+          x
         end
       end,
       :github => social.map do |x|
         if x.include?("github")
-          puts "#{x}"
+          x
         end
       end,
       :blog => social.map do |x|
         if x.include?(".com")
-          puts "#{x}"
+          x
         end
       end,
 
       :twitter => social.map do |x|
         if x.include?("twitter")
-          puts "#{x}"
+          x
         end
       end,
 
