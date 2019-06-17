@@ -30,15 +30,15 @@ class Scraper
     #  binding.pry
     profile_details = {}
 
-    social.each_with_index do |x, i|
-      if x[i].include?("linkedin")
-        profile_details[:linkedin] << x[i]
-      elsif x[i].include?("github")
-        profile_details[:github] << x[i]
-      elsif x[i].include?("twitter")
-        profile_details[:twitter] << x[i]
+    social.map do |x|
+      if x.include?("linkedin.com")
+        profile_details[:linkedin] = x
+      elsif x.include?("github.com")
+        profile_details[:github] = x
+      elsif x.include?("twitter.com")
+        profile_details[:twitter] = x
       else
-        profile_details[:blog] << x[i]
+        profile_details[:blog] = x
       end
     end
 
@@ -58,7 +58,7 @@ class Scraper
     #   :profile_quote => url.css('div.profile-quote').text.strip,
     #   :bio => url.css('div.description-holder p').text.strip
     # }
-    binding.pry
+    # binding.pry
     profile_details
 
   end
