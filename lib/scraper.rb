@@ -28,19 +28,23 @@ class Scraper
     url = Nokogiri::HTML(open(profile_url))
     social = url.css('div.social-icon-container a').map { |link| nil ? nil : link['href'] || nil }
     #  binding.pry
-
-    x = social.each_with_index do |x, i|
-      if x[i].include?("linkedin")
-        x[i]
+    profile_details = {}
+    
+    social.map.with_index do |x, i|
+      case x[i]
+      when include?("linkedin")
+        profile_details[:linkedin] = x[i]
+      when include?("github")
+        profile_details[:github] = x[i]
+      when include?("twitter")
+        profile_details[:twitter] = x[i]
+      else
+        profile_details[:blog] = x[i]
       end
     end
-      social.map.with_index do |x, i|
-        case x[i]
-        when include?("linkedin")
-          profile_details[:linkedin] = x[i]
-        when include?("linkedin")
-        when include?("linkedin")
-        when include?("linkedin")
+
+    profile_details[:profile_quote] = url.css('div.profile-quote').text.strip
+    profile_details[:bio] = url.css('div.description-holder p').text.strip
     profile_details = {
       :linkedin => x,
       :github => social[2],
