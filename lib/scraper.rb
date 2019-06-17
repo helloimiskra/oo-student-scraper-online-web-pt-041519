@@ -45,20 +45,20 @@ class Scraper
 
     profile_details[:profile_quote] = url.css('div.profile-quote').text.strip
     profile_details[:bio] = url.css('div.description-holder p').text.strip
-    profile_details = {
-      :linkedin => x,
-      :github => social[2],
-      # social.each {|social| social.include?('github') ? social : nil},
-      # social[2].include?('github') ? social[2] : nil,
-      :blog => social[3],
-      # social.each {|social| social.include?('.com') ? social : nil},
-      # # social[3].include?('.com') ? social[3] : nil,
-      :twitter => social[0],
-      # social.each {|social| social.include?('twitter') ? social : nil},
-      # social[0].include?('twitter') ? social[0] : nil,
-      :profile_quote => url.css('div.profile-quote').text.strip,
-      :bio => url.css('div.description-holder p').text.strip
-    }
+    # profile_details = {
+    #   :linkedin => x,
+    #   :github => social[2],
+    #   # social.each {|social| social.include?('github') ? social : nil},
+    #   # social[2].include?('github') ? social[2] : nil,
+    #   :blog => social[3],
+    #   # social.each {|social| social.include?('.com') ? social : nil},
+    #   # # social[3].include?('.com') ? social[3] : nil,
+    #   :twitter => social[0],
+    #   # social.each {|social| social.include?('twitter') ? social : nil},
+    #   # social[0].include?('twitter') ? social[0] : nil,
+    #   :profile_quote => url.css('div.profile-quote').text.strip,
+    #   :bio => url.css('div.description-holder p').text.strip
+    # }
     profile_details
 
   end
