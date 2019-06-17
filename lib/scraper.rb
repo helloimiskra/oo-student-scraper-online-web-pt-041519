@@ -28,11 +28,16 @@ class Scraper
     url = Nokogiri::HTML(open(profile_url))
     social = url.css('div.social-icon-container a').map { |link| nil ? nil : link['href'] || nil }
     #  binding.pry
+
+    x = social.each_with_index do |x, i|
+      if x[i].include?("linkedin")
+        x[i]
+      end
+    end
+    
     profile_details = {
-      :linkedin => social.each_with_index do |x, i|
-        if x[i].include?("linkedin")
-          x[i]
-      end,
+      :linkedin => x
+      ,
       :github => social[2],
       # social.each {|social| social.include?('github') ? social : nil},
       # social[2].include?('github') ? social[2] : nil,
